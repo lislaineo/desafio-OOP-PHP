@@ -6,6 +6,8 @@ body {
 
 .form-control, .btn {font-size: 14px;}
 
+.different-color {color: #000;}
+
 header {height: 10vh;}
 
 h1 {

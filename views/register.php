@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <form action="" method="post" class="container col-3 bg-white my-3 px-5 text-center">
-    <div class="border">
+  <form action="" method="post" class="container col-3 flex-wrap text-center">
+    <div class="border my-3 px-4 py-2 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h2 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h2>
       <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail">
@@ -21,8 +21,8 @@
       <button type="submit" class="form-group btn btn-primary col-12">Cadastre-se</button>
       <p>Ao se cadastrar, você concorda com nossos <strong>Termos</strong>, <strong>Política de Dados</strong> e <strong>Política de Cookies</strong>.</p>
     </div>
-    <div class="border">
-      <p>Tem uma conta? Conecte-se</p>
+    <div class="border bg-white">
+      <p class="different-color py-2 m-0">Tem uma conta? <a href="#">Conecte-se</a></p>
     </div>
   </form>
 </body>
