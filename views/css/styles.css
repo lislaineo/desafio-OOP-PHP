@@ -10,6 +10,8 @@ body {
 
 header {height: 10vh;}
 
+a:hover, a:focus {text-decoration: none;}
+
 h1 {
     font-family: 'Grand Hotel', cursive;
     color: #000;
