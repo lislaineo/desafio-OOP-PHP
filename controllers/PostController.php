@@ -33,9 +33,9 @@ class PostController
 
     private function createPost()
     {
-        $description = $_POST['descricao'];
-        $fileName = $_FILES['img']['name'];
-        $tmpTarget = $_FILES['img']['tmp_name'];
+        $description = $_POST['description'];
+        $fileName = $_FILES['image']['name'];
+        $tmpTarget = $_FILES['image']['tmp_name'];
         $targetFile = "views/img/$fileName";
         move_uploaded_file($tmpTarget,$targetFile);
 
@@ -43,7 +43,7 @@ class PostController
         $result = $post->createPost($targetFile,$description);
 
         if($result) {
-            header('Location:/fake-insta/posts');
+            header('Location:/desafio-OOP-PHP/posts');
         }
     }
 

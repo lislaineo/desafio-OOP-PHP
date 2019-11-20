@@ -13,7 +13,7 @@ $posts = $_REQUEST['posts'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posts</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
     
@@ -21,15 +21,15 @@ $posts = $_REQUEST['posts'];
     <main class="board">
     <?php foreach($posts as $post): ?>
         <div class="card mt-5">
-            <img id="cardimg" src="<?php echo $post->imagem; ?>" alt="Card image cap">
+            <img id="cardimg" src="<?php echo $post->image; ?>" alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">
-                    <?php echo $post->descricao; ?>
+                    <?php echo $post->description; ?>
                 </p>
             </div>
         </div>
     <?php endforeach; ?>
-        <a class="float-button" href="/fake-insta/post-form">&#10010;</a>
+        <a class="float-button" href="/desafio-OOP-PHP/post-form">&#10010;</a>
     </main>
 
 
