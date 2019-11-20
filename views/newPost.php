@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Novo Post</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
     <?php include "views/includes/header.php"; ?>
     <main class="board">
         <h1>Cadastro de novo post</h1>
-        <form action="/fake-insta/create-post" method="post" enctype="multipart/form-data">
+        <form action="create-post" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="exampleFormControlFile1">Selecione uma imagem</label>
-                <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
+                <label for="image">Selecione uma imagem</label>
+                <input type="file" class="form-control-file" name="image" id="image">
             </div>
             <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Insira uma descrição">
+                <label for="description">Descrição</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição">
             </div>
             <button type="submit" class="btn btn-success">Postar</button>
         </form>

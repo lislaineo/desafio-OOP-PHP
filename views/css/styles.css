@@ -1,10 +1,24 @@
-
 body {
     background-color: #fafafa;
+    color: #999;
+    font-size: 14px;
 }
-header {
-    height: 10vh;
+
+.form-control, .btn {font-size: 14px;}
+
+header {height: 10vh;}
+
+h1 {
+    font-family: 'Grand Hotel', cursive;
+    color: #000;
+    font-size: 3rem;
 }
+
+h2 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
 .topo-instagran {
     background-color: #fff;
     border: 1px solid rgba(0,0,0, 0.4);
@@ -12,11 +26,9 @@ header {
     color: black;
 }
 
-.topo-instagran a {
-    color: black;
-}
+.topo-instagran a {color: black;}
 
-.board{
+.board {
     background: #fff;
     height: 90vh;
     width: 50%;
@@ -24,7 +36,7 @@ header {
     padding: 20px;
 }
 
-.float-button{
+.float-button {
     color: black;
     border: 1px solid black;
     border-radius: 980px;
@@ -39,12 +51,12 @@ header {
     line-height: 44px;
 }
 
-.float-button:hover{
+.float-button:hover {
     color: palevioletred;
     text-decoration: none;
 }
 
-.float-button:active{
+.float-button:active {
     color:#fff;
     background-color: palevioletred;
     box-shadow: 0 5px #666;

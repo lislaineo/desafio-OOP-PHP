@@ -1,7 +1,7 @@
 <?php 
 
 $posts = $_REQUEST['posts'];
-var_dump($posts);
+// var_dump($posts);
 
 ?>
 
@@ -13,7 +13,7 @@ var_dump($posts);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posts</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
