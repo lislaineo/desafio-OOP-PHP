@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Novo Post</title>
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="views/css/styles.css">
 </head>
@@ -12,7 +13,7 @@
     
     <?php include "views/includes/header.php"; ?>
     <main class="board">
-        <h1>Cadastro de novo post</h1>
+        <h2 class="text-center">Cadastro de novo post</h2>
         <form action="/desafio-OOP-PHP/create-post" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="image">Selecione uma imagem</label>
@@ -20,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição (Máx. 140 caracteres)">
             </div>
             <button type="submit" class="btn btn-success">Postar</button>
         </form>

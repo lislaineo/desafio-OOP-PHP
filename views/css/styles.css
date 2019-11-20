@@ -1,6 +1,6 @@
 body {
-    background-color: #fafafa;
-    color: #999;
+    background-color: #FAFAFA;
+    color: #333;
     font-size: 14px;
 }
 
@@ -18,19 +18,33 @@ h1 {
     font-size: 3rem;
 }
 
-h2 {
+h2 {font-size: 2rem;}
+
+h3 {
     font-size: 17px;
+    color: #999;
     font-weight: 600;
 }
 
-.topo-instagran {
-    background-color: #fff;
+label {font-weight: 600;}
+
+.navbar {
+    background-color: #FFF;
     border: 1px solid rgba(0,0,0, 0.4);
     box-shadow: -2px -2px 10px;
-    color: black;
+    color: #000;
 }
 
-.topo-instagran a {color: black;}
+.navbar-brand {
+    font-family: 'Grand Hotel', cursive;
+    color: #000;
+}
+
+.navbar-brand:hover {color: #000;}
+
+.navbar-brand img {
+    width: 50px;
+}
 
 .board {
     background: #fff;

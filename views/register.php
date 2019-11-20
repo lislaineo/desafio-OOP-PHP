@@ -13,7 +13,7 @@
   <form action="" method="post" class="container col-3 flex-wrap text-center">
     <div class="border my-3 px-4 py-2 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
-      <h2 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h2>
+      <h3class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
       <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail">
       <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome">
       <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário">
