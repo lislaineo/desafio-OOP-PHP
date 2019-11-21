@@ -24,14 +24,26 @@ switch ($route) {
         break;
 
     case 'login':
-        include "controllers/PostController.php";
-        $controller = new PostController();
+        include "controllers/UserController.php";
+        $controller = new UserController();
         $controller->action($route);
         break;
         
     case 'register':
-        include "controllers/PostController.php";
-        $controller = new PostController();
+        include "controllers/UserController.php";
+        $controller = new UserController();
+        $controller->action($route);
+        break;
+
+    case 'create-user':
+        include "controllers/UserController.php";
+        $controller = new UserController();
+        $controller->action($route);
+        break;
+
+    case 'get-user-info':
+        include "controllers/UserController.php";
+        $controller = new UserController();
         $controller->action($route);
         break;
 }
