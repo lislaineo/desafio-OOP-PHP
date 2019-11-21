@@ -2,7 +2,6 @@
 session_start();
 $posts = $_REQUEST['posts'];
 // var_dump($posts);
-var_dump($_SESSION);
 
 ?>
 

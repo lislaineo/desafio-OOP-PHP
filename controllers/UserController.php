@@ -63,6 +63,7 @@ class UserController
 
         if(password_verify($pass,$userInfo[0]->password)) {
             session_start();
+            $_SESSION['login'] = $login;
             header('Location:/desafio-OOP-PHP/posts');
         }
     }
