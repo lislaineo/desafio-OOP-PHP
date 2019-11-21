@@ -18,6 +18,14 @@ class PostController
             case 'create-post':
                 $this->createPost();
                 break;
+
+            case 'login':
+                $this->viewLogin();
+                break;
+
+            case 'register':
+                $this->viewRegister();
+                break;
         }
     }
 
@@ -53,6 +61,16 @@ class PostController
         $postList = $post->showPosts();
         $_REQUEST['posts'] = $postList;
         $this->viewPosts();
+    }
+
+    private function viewLogin()
+    {
+        include "views/login.php";
+    }
+
+    private function viewRegister()
+    {
+        include "views/register.php";
     }
 }
 

@@ -22,6 +22,18 @@ switch ($route) {
         $controller = new PostController();
         $controller->action($route);
         break;
+
+    case 'login':
+        include "controllers/PostController.php";
+        $controller = new PostController();
+        $controller->action($route);
+        break;
+        
+    case 'register':
+        include "controllers/PostController.php";
+        $controller = new PostController();
+        $controller->action($route);
+        break;
 }
 
 ?>

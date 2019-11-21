@@ -7,7 +7,7 @@
   <title>Entrar</title>
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
   <form action="" method="post" class="container col-3 flex-wrap text-center">
@@ -18,7 +18,7 @@
       <button type="submit" class="form-group btn btn-primary col-12">Entrar</button>
     </div>
     <div class="border bg-white">
-      <p class="different-color py-3 m-0">Não tem uma conta? <a href="#">Cadastre-se</a></p>
+      <p class="different-color py-3 m-0">Não tem uma conta? <a href="/desafio-OOP-PHP/register">Cadastre-se</a></p>
     </div>
   </form>
 </body>
