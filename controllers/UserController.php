@@ -10,6 +10,10 @@ class UserController
             case 'login':
                 $this->viewLogin();
                 break;
+            
+            case 'logout':
+                $this->viewLogout();
+                break;
 
             case 'register':
                 $this->viewRegister();
@@ -28,6 +32,12 @@ class UserController
     private function viewLogin()
     {
         include "views/login.php";
+    }
+
+    private function viewLogout()
+    {
+        session_destroy();
+        header('Location:/desafio-OOP-PHP/home');
     }
 
     private function viewRegister()

@@ -33,6 +33,12 @@ switch ($route) {
         $controller = new UserController();
         $controller->action($route);
         break;
+
+    case 'logout':
+        include "controllers/UserController.php";
+        $controller = new UserController();
+        $controller->action($route);
+        break;
         
     case 'register':
         include "controllers/UserController.php";
