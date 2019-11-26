@@ -13,7 +13,7 @@ class Post extends Connection
     public function showPosts() 
     {
         $dsn = parent::createConnection();
-        $query = $dsn->query('SELECT * FROM posts ORDER BY id DESC');
+        $query = $dsn->query('SELECT * FROM posts as P INNER JOIN users as U ON P.user_id = U.id ORDER BY P.id DESC');
         $result = $query->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }

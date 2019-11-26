@@ -3,9 +3,9 @@ session_start();
 if($_SESSION['login'] == []) {
     header('Location:/desafio-OOP-PHP/home');
 }
-var_dump($_SESSION);
+// var_dump($_SESSION);
 $posts = $_REQUEST['posts'];
-// var_dump($posts);
+var_dump($posts);
 
 ?>
 
@@ -31,6 +31,9 @@ $posts = $_REQUEST['posts'];
             <div class="card-body">
                 <p class="card-text">
                     <?php echo $post->description; ?>
+                </p>
+                <p class="card-text">
+                    Publicado por: <strong><?php echo $post->login; ?></strong>
                 </p>
             </div>
         </div>
