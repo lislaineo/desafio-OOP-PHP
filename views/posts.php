@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if($_SESSION['login'] == []) {
+    header('Location:/desafio-OOP-PHP/home');
+}
 $posts = $_REQUEST['posts'];
 // var_dump($posts);
 

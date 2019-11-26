@@ -1,4 +1,5 @@
 <?php
+
 //Pega a info digitada pelo usuario, se nada foi digitado leva para a página de cadastro
 $route = key($_GET)?key($_GET):"home";
 

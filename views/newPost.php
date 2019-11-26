@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if($_SESSION['login'] == []) {
+    header('Location:/desafio-OOP-PHP/home');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
