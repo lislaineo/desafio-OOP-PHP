@@ -36,6 +36,7 @@ class UserController
 
     private function viewLogout()
     {
+        session_start();
         session_destroy();
         header('Location:/desafio-OOP-PHP/home');
     }
