@@ -7,6 +7,10 @@ class PostController
     {
         //qual ação vai tomar
         switch ($route) {
+            case 'home':
+                $this->viewHome();
+                break;
+
             case 'posts':
                 $this->showPosts();
                 break;
@@ -19,6 +23,11 @@ class PostController
                 $this->createPost();
                 break;
         }
+    }
+
+    private function viewHome()
+    {
+        include "views/home.php";
     }
 
     private function viewForm()

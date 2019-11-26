@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fakeinsta - Cadastre-se</title>
+  <title>Fakeinsta</title>
   <link rel="shortcut icon" href="views/img/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
-  <form action="/desafio-OOP-PHP/create-user" method="post" class="container col-3 flex-wrap text-center">
+  <main class="row mx-0 align-items-center justify-content-center">
+    <img src="views/img/mobile.png" alt="" class="">
+  <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center">
     <div class="border my-3 px-4 py-2 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
@@ -26,5 +28,6 @@
       <p class="different-color py-2 m-0">Tem uma conta? <a href="/desafio-OOP-PHP/login">Conecte-se</a></p>
     </div>
   </form>
+  </main>
 </body>
 </html>
