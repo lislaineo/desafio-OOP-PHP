@@ -42,6 +42,7 @@ class PostController
 
     private function createPost()
     {
+        $user = $_POST['user_id'];
         $description = $_POST['description'];
         $fileName = $_FILES['image']['name'];
         $tmpTarget = $_FILES['image']['tmp_name'];
@@ -49,7 +50,7 @@ class PostController
         move_uploaded_file($tmpTarget,$targetFile);
 
         $post = new Post();
-        $result = $post->createPost($targetFile,$description);
+        $result = $post->createPost($targetFile,$description,$user);
 
         if($result) {
             header('Location:/desafio-OOP-PHP/posts');

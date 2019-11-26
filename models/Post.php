@@ -3,11 +3,11 @@ include_once 'Connection.php';
 
 class Post extends Connection
 {
-    public function createPost($image,$description)
+    public function createPost($image,$description,$user)
     {
         $dsn = parent::createConnection();
-        $query = $dsn->prepare('INSERT INTO posts (image, description) values (?,?)');
-        return $query->execute([$image, $description]);
+        $query = $dsn->prepare('INSERT INTO posts (image, description, user_id) values (?,?,?)');
+        return $query->execute([$image, $description,$user]);
     }
 
     public function showPosts() 

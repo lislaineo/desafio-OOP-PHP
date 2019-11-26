@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['login'] == []) {
     header('Location:/desafio-OOP-PHP/home');
 }
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +24,7 @@ if($_SESSION['login'] == []) {
     <main class="board">
         <h2 class="text-center">Cadastro de novo post</h2>
         <form action="/desafio-OOP-PHP/create-post" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" id="user_id" value="<?php echo $_SESSION['id']; ?>">
             <div class="form-group">
                 <label for="image">Selecione uma imagem</label>
                 <input type="file" class="form-control-file" name="image" id="image">

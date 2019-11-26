@@ -69,12 +69,12 @@ class UserController
        
         $user = new User();
         $userInfo = $user->getUserInfo($login);
-        $_POST['users'] = $userInfo;
-        // var_dump($userInfo[0]->password);
+        $_POST['users'] = $userInfo;        
 
         if(password_verify($pass,$userInfo[0]->password)) {
             session_start();
             $_SESSION['login'] = $login;
+            $_SESSION['id'] = $userInfo[0]->id;
             header('Location:/desafio-OOP-PHP/posts');
         }
     }
