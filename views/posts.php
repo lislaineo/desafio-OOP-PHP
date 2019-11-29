@@ -7,6 +7,11 @@ if($_SESSION['login'] == []) {
 $posts = $_REQUEST['posts'];
 var_dump($posts);
 
+// $type = $_GET['type'];
+// var_dump($type);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +34,9 @@ var_dump($posts);
         <div class="card mt-5">
             <img id="cardimg" src="<?php echo $post->image; ?>" alt="Card image cap">
             <div class="card-body">
+                <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $post->id ?>/<?php echo $_SESSION['user_id']; ?>">
+                    Like
+                </a>
                 <p class="card-text">
                     <?php echo $post->description; ?>
                 </p>

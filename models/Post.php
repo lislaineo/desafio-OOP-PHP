@@ -7,15 +7,39 @@ class Post extends Connection
     {
         $dsn = parent::createConnection();
         $query = $dsn->prepare('INSERT INTO posts (image, description, user_id) values (?,?,?)');
-        return $query->execute([$image, $description,$user]);
+        return $query->execute([$image, $description, $user]);
     }
 
     public function showPosts() 
     {
         $dsn = parent::createConnection();
-        $query = $dsn->query('SELECT * FROM posts as P INNER JOIN users as U ON P.user_id = U.id ORDER BY P.id DESC');
+        $query = $dsn->query('SELECT posts.id, posts.image, posts.description, users.login FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.id DESC');
         $result = $query->fetchAll(PDO::FETCH_OBJ);
         return $result;
+    }
+
+    public function likePost($user,$post)
+    {
+        $dsn = parent::createConnection();
+        return $dsn->query("INSERT INTO posts_likes (user_id, post_id)
+            (SELECT {$user}, {$post}
+            FROM posts WHERE NOT EXISTS (SELECT id FROM posts_likes WHERE user_id = {$user} AND post_id = {$post})
+            LIMIT 1)");
+    }
+
+    public function countLike()
+    {
+        $dsn = parent::createConnection();
+        return $dsn->query ("SELECT 
+	posts.id, 
+	COUNT(posts_likes.id) AS likes,
+	GROUP_CONCAT(users.name SEPARATOR '|') AS liked_by
+	FROM posts
+	LEFT JOIN posts_likes
+	ON posts.id = posts_likes.post_id
+	LEFT JOIN users
+	ON posts_likes.user_id = users.id
+	GROUP BY posts.id;");
     }
     
 }

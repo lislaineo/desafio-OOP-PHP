@@ -69,13 +69,17 @@ class UserController
        
         $user = new User();
         $userInfo = $user->getUserInfo($login);
-        $_POST['users'] = $userInfo;        
+        $_POST['users'] = $userInfo;
+        // var_dump($userInfo);
+        // exit;
 
         if(password_verify($pass,$userInfo[0]->password)) {
             session_start();
             $_SESSION['login'] = $login;
-            $_SESSION['id'] = $userInfo[0]->id;
+            $_SESSION['user_id'] = $userInfo[0]->id;
             header('Location:/desafio-OOP-PHP/posts');
+        } else {
+            echo "Senha errada";
         }
     }
 }
