@@ -4,8 +4,10 @@ if($_SESSION['login'] == []) {
     header('Location:/desafio-OOP-PHP/home');
 }
 // var_dump($_SESSION);
-$posts = $_REQUEST['posts'];
-var_dump($posts);
+// $posts = $_REQUEST['posts'];
+$likes = $_REQUEST['likes'];
+// var_dump($_REQUEST);
+// exit;
 
 // $type = $_GET['type'];
 // var_dump($type);
@@ -30,22 +32,25 @@ var_dump($posts);
     
     <?php include "views/includes/header.php"; ?>
     <main class="board">
-    <?php foreach($posts as $post): ?>
+        <?php foreach($likes as $like): ?>
         <div class="card mt-5">
-            <img id="cardimg" src="<?php echo $post->image; ?>" alt="Card image cap">
+            <img id="cardimg" src="<?php echo $like->image; ?>" alt="Card image cap">
             <div class="card-body">
-                <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $post->id ?>/<?php echo $_SESSION['user_id']; ?>">
+                <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $like->id ?>/<?php echo $_SESSION['user_id']; ?>">
                     Like
                 </a>
                 <p class="card-text">
-                    <?php echo $post->description; ?>
+                    No of people who liked this post: <?php echo $like->likes; ?>
                 </p>
                 <p class="card-text">
-                    Publicado por: <strong><?php echo $post->login; ?></strong>
+                    <?php echo $like->description; ?>
+                </p>
+                <p class="card-text">
+                    Publicado por: <strong><?php echo $like->login; ?></strong>
                 </p>
             </div>
         </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
         <a class="float-button" href="/desafio-OOP-PHP/post-form">&#10010;</a>
     </main>
 

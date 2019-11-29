@@ -64,8 +64,10 @@ class PostController
     private function showPosts()
     {
         $post = new Post();
-        $postList = $post->showPosts();
-        $_REQUEST['posts'] = $postList;
+        // $postList = $post->showPosts();
+        // $_REQUEST['posts'] = $postList;
+        $likeCounts = $post->countLike();
+        $_REQUEST['likes'] = $likeCounts;
         $this->viewPosts();
     }
 

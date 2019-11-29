@@ -30,16 +30,9 @@ class Post extends Connection
     public function countLike()
     {
         $dsn = parent::createConnection();
-        return $dsn->query ("SELECT 
-	posts.id, 
-	COUNT(posts_likes.id) AS likes,
-	GROUP_CONCAT(users.name SEPARATOR '|') AS liked_by
-	FROM posts
-	LEFT JOIN posts_likes
-	ON posts.id = posts_likes.post_id
-	LEFT JOIN users
-	ON posts_likes.user_id = users.id
-	GROUP BY posts.id;");
+        $query = $dsn->query ("SELECT posts.id, posts.image, posts.description, users.login, COUNT(posts_likes.id) AS likes, GROUP_CONCAT(users.name SEPARATOR '|') AS liked_by FROM posts LEFT JOIN posts_likes ON posts.id = posts_likes.post_id LEFT JOIN users ON posts_likes.user_id = users.id GROUP BY posts.id ORDER BY posts.id DESC");
+        $result = $query->fetchAll(PDO::FETCH_OBJ);
+        return $result;
     }
     
 }
