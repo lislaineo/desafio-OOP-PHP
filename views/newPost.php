@@ -32,7 +32,7 @@ if($_SESSION['login'] == []) {
             </div>
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição (Máx. 140 caracteres)">
             </div>
             <button type="submit" class="btn btn-success">Postar</button>
         </form>

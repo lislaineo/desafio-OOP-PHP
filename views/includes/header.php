@@ -1,5 +1,5 @@
 <?php $user = isset($_SESSION['login']) ? $_SESSION['login'] : []; ?>
-<header>
+<header class="fixed-top">
         <nav class="navbar justify-content-evenly">
             <a class="navbar-brand" href="/desafio-OOP-PHP/"><img src="views/img/logo.png" alt="" srcset="">| Instagram</a>
             <?php if(isset($user) && $user != []): ?>
