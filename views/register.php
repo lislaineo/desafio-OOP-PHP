@@ -12,7 +12,7 @@
 </head>
 <body>
   <form action="/desafio-OOP-PHP/create-user" method="post" class="container col-3 flex-wrap text-center" enctype="multipart/form-data">
-    <div class="border my-3 px-4 py-2 bg-white">
+    <div class="border my-3 px-4 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
       <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome">

@@ -50,7 +50,7 @@ class PostController
         $description = $_POST['description'];
         $fileName = $_FILES['image']['name'];
         $tmpTarget = $_FILES['image']['tmp_name'];
-        $targetFile = "views/img/$fileName";
+        $targetFile = "views/img/posts/$fileName";
         move_uploaded_file($tmpTarget,$targetFile);
 
         $post = new Post();

@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
-  <main class="row mx-0 align-items-center justify-content-center">
+  <main class="row m-0 align-items-center justify-content-center">
     <img src="views/img/mobile.png" alt="" class="">
   <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center" enctype="multipart/form-data">
-    <div class="border my-3 px-4 py-2 bg-white">
+    <div class="border mt-0 mb-2 px-4 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
       <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome">
