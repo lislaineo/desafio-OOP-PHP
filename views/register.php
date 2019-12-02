@@ -15,11 +15,11 @@
     <div class="border my-3 px-4 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
-      <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome">
-      <input type="file" class="form-group form-control bg-light" name="profilePic" id="profilePic">
-      <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail">
-      <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário">
-      <input type="password" class="form-group form-control bg-light" name="password" id="password" placeholder="Senha">
+      <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome" required>
+      <input type="file" class="form-group form-control bg-light" name="profilePic" id="profilePic" required>
+      <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail" required>
+      <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário" required>
+      <input type="password" class="form-group form-control bg-light" name="password" id="password" placeholder="Senha" required>
       <button type="submit" class="form-group btn btn-primary col-12">Cadastre-se</button>
       <p>Ao se cadastrar, você concorda com nossos <strong>Termos</strong>, <strong>Política de Dados</strong> e <strong>Política de Cookies</strong>.</p>
     </div>
