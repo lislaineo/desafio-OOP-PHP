@@ -13,12 +13,13 @@
 <body>
   <main class="row mx-0 align-items-center justify-content-center">
     <img src="views/img/mobile.png" alt="" class="">
-  <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center">
+  <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center" enctype="multipart/form-data">
     <div class="border my-3 px-4 py-2 bg-white">
       <h1 class="form-group mt-3">Instagram</h1>
       <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
-      <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail">
       <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome">
+      <input type="file" class="form-group form-control bg-light" name="profilePic" id="profilePic">
+      <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail">
       <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário">
       <input type="password" class="form-group form-control bg-light" name="password" id="password" placeholder="Senha">
       <button type="submit" class="form-group btn btn-primary col-12">Cadastre-se</button>

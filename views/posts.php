@@ -3,7 +3,7 @@ session_start();
 if($_SESSION['login'] == []) {
     header('Location:/desafio-OOP-PHP/home');
 }
-// var_dump($_SESSION);
+var_dump($_SESSION);
 // $posts = $_REQUEST['posts'];
 $likes = $_REQUEST['likes'];
 // var_dump($_REQUEST);
@@ -27,6 +27,7 @@ $likes = $_REQUEST['likes'];
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="views/css/styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
     
@@ -34,19 +35,20 @@ $likes = $_REQUEST['likes'];
     <main class="board">
         <?php foreach($likes as $like): ?>
         <div class="card mt-5">
-            <img id="cardimg" src="<?php echo $like->image; ?>" alt="Card image cap">
+            <img id="card-img" src="<?php echo $like->image; ?>" alt="Card image cap">
             <div class="card-body">
                 <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $like->id ?>/<?php echo $_SESSION['user_id']; ?>">
-                    Like
+                    <i style='font-size:24px' class='far'>&#xf004;</i>
                 </a>
                 <p class="card-text">
-                    No of people who liked this post: <?php echo $like->likes; ?>
+                    <?php if($like->likes == 1): ?>
+                        <strong><?php echo $like->likes; ?> curtida</strong>
+                    <?php elseif($like->likes > 1): ?>
+                        <strong><?php echo $like->likes; ?> curtidas</strong>
+                    <?php endif; ?>
                 </p>
                 <p class="card-text">
-                    <?php echo $like->description; ?>
-                </p>
-                <p class="card-text">
-                    Publicado por: <strong><?php echo $like->login; ?></strong>
+                    <img src="<?php echo $like->profilePic; ?>" alt="Foto de perfil" class="profile-pic mr-2"> <strong><?php echo $like->login; ?></strong> <?php echo $like->description; ?>
                 </p>
             </div>
         </div>

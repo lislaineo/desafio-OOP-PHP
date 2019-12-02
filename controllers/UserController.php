@@ -53,10 +53,15 @@ class UserController
         $name = $_POST['name'];
         $email = $_POST['email'];
         $hashPass = password_hash($pass,PASSWORD_DEFAULT);
+        $fileName = $_FILES['profilePic']['name'];
+        $tmpTarget = $_FILES['profilePic']['tmp_name'];
+        $targetFile = "views/img/profile/$fileName";
+        move_uploaded_file($tmpTarget,$targetFile);
 
         $user = new User();
-        $result = $user->createUser($login,$hashPass,$name,$email);
+        $result = $user->createUser($targetFile,$login,$hashPass,$name,$email);
 
+        $this->getUserInfo();
         if($result) {
             header('Location:/desafio-OOP-PHP/posts');
         }

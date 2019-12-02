@@ -26,6 +26,20 @@ h3 {
     font-weight: 600;
 }
 
+.far {
+    color: #000;
+}
+
+.far:hover, .far:focus {
+    color: #d80b0b;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
 label {font-weight: 600;}
 
 .navbar {
@@ -48,7 +62,7 @@ label {font-weight: 600;}
 
 .board {
     background: #fff;
-    height: 90vh;
+    /* height: 90vh; */
     width: 50%;
     margin: 0 auto;
     padding: 20px;
@@ -82,7 +96,8 @@ label {font-weight: 600;}
     transition: 0.3s;
 }
 
-#cardimg {
-    max-width: 50%;
+#card-img {
+    max-width: 90%;
     align-self: center;
+    margin-top: 2rem;
 }
