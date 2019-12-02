@@ -28,11 +28,11 @@ if($_SESSION['login'] == []) {
             <input type="hidden" name="user_id" id="user_id" value="<?php echo $_SESSION['user_id']; ?>">
             <div class="form-group">
                 <label for="image">Selecione uma imagem</label>
-                <input type="file" class="form-control-file" name="image" id="image">
+                <input type="file" class="form-control-file" name="image" id="image" required>
             </div>
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição (Máx. 140 caracteres)">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Insira uma descrição (Máx. 140 caracteres)" required>
             </div>
             <button type="submit" class="btn btn-success">Postar</button>
         </form>
