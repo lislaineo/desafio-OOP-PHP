@@ -5,15 +5,12 @@ if($_SESSION['login'] == []) {
 }
 var_dump($_SESSION);
 // $posts = $_REQUEST['posts'];
-$likes = $_REQUEST['likes'];
+$posts = $_REQUEST['posts'];
 // var_dump($_REQUEST);
 // exit;
 
 // $type = $_GET['type'];
 // var_dump($type);
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -33,22 +30,22 @@ $likes = $_REQUEST['likes'];
     
     <?php include "views/includes/header.php"; ?>
     <main class="board">
-        <?php foreach($likes as $like): ?>
+        <?php foreach($posts as $post): ?>
         <div class="card mt-5">
-            <img id="card-img" src="<?php echo $like->image; ?>" alt="Card image cap">
+            <img id="card-img" src="<?php echo $post->image; ?>" alt="Card image cap">
             <div class="card-body">
-                <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $like->id ?>/<?php echo $_SESSION['user_id']; ?>">
+                <a class="card-text" href="/desafio-OOP-PHP/like-post/<?php echo $post->id ?>/<?php echo $_SESSION['user_id']; ?>">
                     <i style='font-size:24px' class='far'>&#xf004;</i>
                 </a>
                 <p class="card-text">
-                    <?php if($like->likes == 1): ?>
-                        <strong><?php echo $like->likes; ?> curtida</strong>
-                    <?php elseif($like->likes > 1): ?>
-                        <strong><?php echo $like->likes; ?> curtidas</strong>
+                    <?php if($post->likes == 1): ?>
+                        <strong><?php echo $post->likes; ?> curtida</strong>
+                    <?php elseif($post->likes > 1): ?>
+                        <strong><?php echo $post->likes; ?> curtidas</strong>
                     <?php endif; ?>
                 </p>
                 <p class="card-text">
-                    <img src="<?php echo $like->profilePic; ?>" alt="Foto de perfil" class="profile-pic mr-2"> <strong><?php echo $like->login; ?></strong> <?php echo $like->description; ?>
+                    <img src="<?php echo $post->profilePic; ?>" alt="Foto de perfil" class="profile-pic mr-2"> <strong><?php echo $post->login; ?></strong> <?php echo $post->description; ?>
                 </p>
             </div>
         </div>

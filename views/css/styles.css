@@ -26,13 +26,9 @@ h3 {
     font-weight: 600;
 }
 
-.far {
-    color: #000;
-}
+.far {color: #000;}
 
-.far:hover, .far:focus {
-    color: #d80b0b;
-}
+.far:hover, .far:focus {color: #d80b0b;}
 
 .profile-pic {
     width: 32px;
@@ -56,13 +52,10 @@ label {font-weight: 600;}
 
 .navbar-brand:hover {color: #000;}
 
-.navbar-brand img {
-    width: 50px;
-}
+.navbar-brand img {width: 50px;}
 
 .board {
     background: #fff;
-    /* height: 90vh; */
     width: 50%;
     margin: 0 auto;
     padding: 20px;

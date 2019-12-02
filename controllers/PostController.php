@@ -64,40 +64,21 @@ class PostController
     private function showPosts()
     {
         $post = new Post();
-        // $postList = $post->showPosts();
-        // $_REQUEST['posts'] = $postList;
-        $likeCounts = $post->countLike();
-        $_REQUEST['likes'] = $likeCounts;
+        $postList = $post->showPosts();
+        $_REQUEST['posts'] = $postList;
         $this->viewPosts();
     }
 
     private function likePost()
     {
-        // $user = $_REQUEST;
-        // var_dump($user);
-        // exit;
         $user = $_GET['user_id'];
         $post = $_GET['post_id'];
         $like = new Post();
         $likeCount = $like->likePost($user,$post);
-        // var_dump($likeCount);
-        // exit;
 
         if($likeCount) {
             header('Location:/desafio-OOP-PHP/posts');
         }
     }
-
-    // private function likePost()
-    // {
-    //     $post = new Post();
-    //     $likeCount = $post->likePost();
-
-    //     if($likeCount) {
-    //         header('Location:/desafio-OOP-PHP/posts');
-    //     }
-    // }
 }
-
-
 ?>
