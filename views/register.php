@@ -26,7 +26,7 @@
       <p>Ao se cadastrar, você concorda com nossos <strong>Termos</strong>, <strong>Política de Dados</strong> e <strong>Política de Cookies</strong>.</p>
     </div>
     <div class="border bg-white">
-      <p class="different-color py-2 m-0">Tem uma conta? <a href="/desafio-OOP-PHP/login">Conecte-se</a></p>
+      <p class="footer-different-color py-2 m-0">Tem uma conta? <a href="/desafio-OOP-PHP/login">Conecte-se</a></p>
     </div>
   </form>
 </body>

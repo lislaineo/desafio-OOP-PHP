@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Verifica se o usuário está logado. Se não estiver, redireciona para a home
 if ($_SESSION['login'] == []) {
   header('Location:/desafio-OOP-PHP/home');
 }

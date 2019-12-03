@@ -23,7 +23,7 @@
       <button type="submit" class="form-group btn btn-primary col-12">Entrar</button>
     </div>
     <div class="border bg-white">
-      <p class="different-color py-3 m-0">Não tem uma conta? <a href="/desafio-OOP-PHP/register">Cadastre-se</a></p>
+      <p class="footer-different-color py-3 m-0">Não tem uma conta? <a href="/desafio-OOP-PHP/register">Cadastre-se</a></p>
     </div>
   </form>
 </body>
