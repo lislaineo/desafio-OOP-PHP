@@ -8,8 +8,8 @@ $route = key($_GET)?key($_GET):"home";
 //Define qual switch vai chamar
 switch ($route) {
     case 'home':
-        include "controllers/PostController.php";
-        $controller = new PostController();
+        include "controllers/HomeController.php";
+        $controller = new HomeController();
         $controller->action($route);
         break;
 
