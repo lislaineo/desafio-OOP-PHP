@@ -95,7 +95,7 @@ class UserController
 
         //Última verificação para checar se algum erro deixou $uploadOk igual a 0
       } elseif ($uploadOk == 0) {
-        echo "Não foi possível cadastrar o post.";
+        echo "Não foi possível cadastrar o usuário.";
 
         //Se tudo estiver ok, salva a imagem e salva todos os dados do usuário no banco de dados, direcionando para a página de posts
       } else {
