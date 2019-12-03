@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="views/css/styles.css">
 </head>
+
 <body>
   <form action="/desafio-OOP-PHP/create-user" method="post" class="container col-3 flex-wrap text-center" enctype="multipart/form-data">
     <div class="border my-3 px-4 bg-white">
@@ -28,4 +30,5 @@
     </div>
   </form>
 </body>
+
 </html>

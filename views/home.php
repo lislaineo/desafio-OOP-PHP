@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,27 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="views/css/styles.css">
 </head>
+
 <body>
   <main class="row m-0 align-items-center justify-content-center">
     <img src="views/img/mobile.png" alt="" class="">
-  <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center" enctype="multipart/form-data">
-    <div class="border mt-0 mb-2 px-4 bg-white">
-      <h1 class="form-group mt-3">Instagram</h1>
-      <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
-      <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome" required>
-      <input type="file" class="form-group form-control bg-light" name="profilePic" id="profilePic" required>
-      <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail" required>
-      <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário" required>
-      <input type="password" class="form-group form-control bg-light" name="password" id="password" placeholder="Senha" required>
-      <button type="submit" class="form-group btn btn-primary col-12">Cadastre-se</button>
-      <p>Ao se cadastrar, você concorda com nossos <strong>Termos</strong>, <strong>Política de Dados</strong> e <strong>Política de Cookies</strong>.</p>
-    </div>
-    <div class="border bg-white">
-      <p class="different-color py-2 m-0">Tem uma conta? <a href="/desafio-OOP-PHP/login">Conecte-se</a></p>
-    </div>
-  </form>
+    <form action="/desafio-OOP-PHP/create-user" method="post" class="col-3 flex-wrap text-center" enctype="multipart/form-data">
+      <div class="border mt-0 mb-2 px-4 bg-white">
+        <h1 class="form-group mt-3">Instagram</h1>
+        <h3 class="form-group">Cadastre-se para ver fotos dos seus amigos.</h3>
+        <input type="text" class="form-group form-control bg-light" name="name" id="name" placeholder="Nome" required>
+        <input type="file" class="form-group form-control bg-light" name="profilePic" id="profilePic" required>
+        <input type="email" class="form-group form-control bg-light" name="email" id="email" placeholder="E-mail" required>
+        <input type="text" class="form-group form-control bg-light" name="login" id="login" placeholder="Nome de usuário" required>
+        <input type="password" class="form-group form-control bg-light" name="password" id="password" placeholder="Senha" required>
+        <button type="submit" class="form-group btn btn-primary col-12">Cadastre-se</button>
+        <p>Ao se cadastrar, você concorda com nossos <strong>Termos</strong>, <strong>Política de Dados</strong> e <strong>Política de Cookies</strong>.</p>
+      </div>
+      <div class="border bg-white">
+        <p class="different-color py-2 m-0">Tem uma conta? <a href="/desafio-OOP-PHP/login">Conecte-se</a></p>
+      </div>
+    </form>
   </main>
 </body>
+
 </html>
