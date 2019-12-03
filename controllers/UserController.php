@@ -53,17 +53,54 @@ class UserController
         $name = $_POST['name'];
         $email = $_POST['email'];
         $hashPass = password_hash($pass,PASSWORD_DEFAULT);
-        $fileName = $_FILES['profilePic']['name'];
-        $tmpTarget = $_FILES['profilePic']['tmp_name'];
-        $targetFile = "views/img/profile/$fileName";
-        move_uploaded_file($tmpTarget,$targetFile);
+        $fieldname = "profilePic";
+        $targetDir = "views/img/profiles/";
+        $fileName = $_FILES[$fieldname]['name'];
+        $fileSize = $_FILES[$fieldname]['size'];
+        $fileType = $_FILES[$fieldname]['type'];
+        $tempDir = $_FILES[$fieldname]['tmp_name'];
+        //Lista de tipos de arquivos permitidos como imagem do produto
+        $allowedTypes = array('image/svg', 'image/jpeg', 'image/jpg', 'image/png');
+        //Tamanho máximo permitido da imagem (em bytes)
+        $allowedSize = 1024 * 500; //500Kb
+        $uploadOk = 1;
 
-        $user = new User();
-        $result = $user->createUser($targetFile,$login,$hashPass,$name,$email);
+        //Valida se a imagem foi selecionada
+        if (isset($fileName)) {
+            //Renomeia a imagem: data do envio_nome do arquivo
+            $newFileName = date("d-M-Y_").$fileName;
+            $targetFile = $targetDir.$newFileName;
 
-        $this->getUserInfo();
-        if($result) {
-            header('Location:/desafio-OOP-PHP/posts');
+            //Verifica se já existe uma imagem com o mesmo nome
+            if (file_exists($targetFile)) {
+                echo "Já existe um arquivo com esse nome. Por favor, use outro nome.<br>";
+                $uploadOk = 0;
+            
+            //Verifica o formato do arquivo e compara com uma lista de extensões pré-definidas
+            } elseif (array_search($fileType, $allowedTypes) === false) {
+                echo "O tipo de arquivo enviado é inválido. Somente imagens são aceitas.<br>";
+                $uploadOk = 0;
+            
+            //Verifica o tamanho do arquivo e compara com o máximo pré-estabelecido
+            } elseif ($fileSize > $allowedSize) {
+                echo "O tamanho do arquivo enviado é maior que o limite. Por favor, diminua o tamanho da imagem.<br>";
+                $uploadOk = 0;
+
+            //Última verificação para checar se algum erro deixou $uploadOk igual a 0
+            } elseif ($uploadOk == 0) {
+                echo "Não foi possível cadastrar o post.";
+            
+            //Se tudo estiver ok, salva a imagem
+            } else {
+                if (move_uploaded_file($tempDir, $targetFile)) {
+                    $user = new User();
+                    $result = $user->createUser($targetFile,$login,$hashPass,$name,$email);
+                    $this->getUserInfo();
+                    header('Location:/desafio-OOP-PHP/posts');
+                } else  {
+                    echo "Você deve selecionar uma imagem para salvar.";
+                }
+            }
         }
     }
 

@@ -51,7 +51,6 @@ class PostController
         $fieldname = "image";
         $targetDir = "views/img/posts/";
         $fileName = $_FILES[$fieldname]['name'];
-        $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
         $fileSize = $_FILES[$fieldname]['size'];
         $fileType = $_FILES[$fieldname]['type'];
         $tempDir = $_FILES[$fieldname]['tmp_name'];
@@ -68,7 +67,7 @@ class PostController
         //Valida se a imagem foi selecionada
 		if (isset($fileName)) {
 			//Renomeia a imagem: data do envio_nome do arquivo
-			$newFileName = date("d-M-Y_").$fileName.'.'.$fileExtension;
+			$newFileName = date("d-M-Y_").$fileName;
 			$targetFile = $targetDir.$newFileName;
 
 			//Verifica se já existe uma imagem com o mesmo nome
