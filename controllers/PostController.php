@@ -25,16 +25,19 @@ class PostController
     }
   }
 
+  // método que exibe a página com o formulário de cadastro de novo post
   private function viewForm()
   {
     include "views/newPost.php";
   }
 
+  // método que exibe a página de posts
   private function viewPosts()
   {
     include "views/posts.php";
   }
 
+  // método para salvar no banco de dados informações sobre um novo post
   private function createPost()
   {
     $user = $_POST['user_id'];
@@ -49,7 +52,7 @@ class PostController
     $allowedSize = 1024 * 500;
     $uploadOk = 1;
 
-    // Verifica se a descrição é maior do que 140 caracteres
+    // Verifica se a descrição é menor do que 140 caracteres para poder prosseguir
     if (iconv_strlen($description) > 140) {
       echo "Descrição muito longa. O máximo de caracteres é 140.<br>";
       $uploadOk = 0;
@@ -92,6 +95,7 @@ class PostController
     }
   }
 
+  // método que recebe os dados dos posts do banco
   private function showPosts()
   {
     $post = new Post();
@@ -100,6 +104,7 @@ class PostController
     $this->viewPosts();
   }
 
+  // método para enviar ao banco de dados informações sobre a curtida de um post
   private function likePost()
   {
     $user = $_GET['user_id'];
