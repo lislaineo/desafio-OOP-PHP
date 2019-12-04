@@ -1,5 +1,5 @@
 <?php
-// Pega a informação digitada pelo usuário na URL. Se nada for digitado, leva para a página inicial
+// Recebe a informação digitada pelo usuário na URL. Se nada for digitado, leva para a página inicial
 $route = key($_GET)?key($_GET):"home";
 
 // Definição de todas as rotas
