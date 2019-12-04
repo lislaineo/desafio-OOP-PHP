@@ -4,7 +4,7 @@
 
 **Resultados**
 * Formulários de cadastro e login criados, usando método POST para envio das informações;
-* Validações realizadas: preenchimento obrigatório de todos os campos, máximo de caracteres no campo descrição, validação de senha e se usuário está logado para acessar páginas, e verificações das imagens (nome de arquivo repetido, formato e tamanho);
+* Validações realizadas: preenchimento obrigatório de todos os campos, máximo de caracteres no campo descrição, mínimo de caracteres para a senha, verificação se já existe usuário e e-mail no banco de dados, verificações das imagens (nome de arquivo repetido, formato e tamanho), validação de senha e se usuário está logado para acessar páginas;
 * Botão curtir inserido, exibindo a quantidade total de curtidas por post com o limite de 1 curtida por usuário;
 * Modelagem do banco de dados (MySQL) e integração com ele;
 * Arquitetura MVC utilizada;
