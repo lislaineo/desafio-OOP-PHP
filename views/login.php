@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+// Verifica se o usuário já está logado. Se estiver, redireciona para a página de posts
+if (isset($_SESSION) && $_SESSION != []) {
+  header('Location:/desafio-OOP-PHP/posts');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
