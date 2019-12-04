@@ -67,11 +67,23 @@ class UserController
     $allowedSize = 1024 * 500;
     $uploadOk = 1;
 
+    $user = new User();
+    // Verifica se já existe no banco de dados o nome de usuário e o e-mail
+    $comparison = $user->compareUserInfo($login, $email);
+    if ($comparison[0]->login == $login) {
+      echo "Esse nome de usuário já existe.<br>";
+      $uploadOk = 0;
+    } elseif ($comparison[0]->email == $email) {
+      echo "Esse e-mail já está cadastrado.<br>";
+      $uploadOk = 0;
+    }
+
     // Verifica se a senha é maior do que 8 caracteres para poder prosseguir
     if (iconv_strlen($pass) < 8) {
       echo "A senha escolhida é muito curta. Você deve usar no mínimo 8 caracteres.<br>";
       $uploadOk = 0;
     }
+
     //Valida se a imagem foi selecionada
     if (isset($fileName)) {
       //Renomeia a imagem: data do envio_nome do arquivo
@@ -100,7 +112,6 @@ class UserController
         //Se tudo estiver ok, salva a imagem e salva todos os dados do usuário no banco de dados, direcionando para a página de posts
       } else {
         if (move_uploaded_file($tempDir, $targetFile)) {
-          $user = new User();
           $result = $user->createUser($targetFile, $login, $hashPass, $name, $email);
           $this->getUserInfo();
           header('Location:/desafio-OOP-PHP/posts');

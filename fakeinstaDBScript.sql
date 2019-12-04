@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema fakeinsta
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `fakeinsta` DEFAULT CHARACTER SET latin1 ;
+CREATE SCHEMA IF NOT EXISTS `fakeinsta` DEFAULT CHARACTER SET utf8mb4 ;
 USE `fakeinsta` ;
 
 -- -----------------------------------------------------
@@ -25,11 +25,11 @@ CREATE TABLE IF NOT EXISTS `fakeinsta`.`users` (
   `name` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `login` (`login` ASC) VISIBLE,
-  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
+  UNIQUE INDEX (`login`),
+  UNIQUE INDEX (`email`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 11
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -41,13 +41,13 @@ CREATE TABLE IF NOT EXISTS `fakeinsta`.`posts` (
   `description` VARCHAR(140) NOT NULL,
   `user_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `user_id` (`user_id` ASC) VISIBLE,
+  INDEX (`user_id`),
   CONSTRAINT `posts_ibfk_1`
     FOREIGN KEY (`user_id`)
     REFERENCES `fakeinsta`.`users` (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 19
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `fakeinsta`.`posts_likes` (
   `user_id` INT(11) NULL DEFAULT NULL,
   `post_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `user_id` (`user_id` ASC) VISIBLE,
-  INDEX `post_id` (`post_id` ASC) VISIBLE,
+  INDEX (`user_id`),
+  INDEX (`post_id`),
   CONSTRAINT `posts_likes_ibfk_1`
     FOREIGN KEY (`user_id`)
     REFERENCES `fakeinsta`.`users` (`id`),
@@ -68,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `fakeinsta`.`posts_likes` (
     REFERENCES `fakeinsta`.`posts` (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 61
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

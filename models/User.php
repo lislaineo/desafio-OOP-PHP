@@ -20,4 +20,12 @@ class User extends Connection
     $result = $query->fetchAll(PDO::FETCH_OBJ);
     return $result;
   }
+
+  public function compareUserInfo($username,$email)
+  {
+    $dsn = parent::createConnection();
+    $query = $dsn->query("SELECT login, email FROM users where login = '$username' OR email = '$email'");
+    $result = $query->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
 }

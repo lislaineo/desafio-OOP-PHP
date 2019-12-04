@@ -3,7 +3,7 @@
 
 <header class="fixed-top">
   <nav class="navbar justify-content-evenly">
-    <a class="navbar-brand" href="/desafio-OOP-PHP/"><img src="views/img/logo.png" alt="" srcset="">| Instagram</a>
+    <a class="navbar-brand" href="/desafio-OOP-PHP/posts"><img src="views/img/logo.png" alt="logo do instagram" srcset="">| Instagram</a>
     <?php if (isset($user) && $user != []) : ?>
       <div class="row">
         <p class="my-0 px-1">Olá, <?= $user; ?>!</p>
